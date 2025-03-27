@@ -283,7 +283,7 @@
                   // Obtener los valores de los parámetros
                   var nro_boleta = params.has('boleta') ? params.get('boleta') : "---";
                   var nombre_cliente = params.has('cliente') ? params.get('cliente') : "==Cliente==";
-                  
+                  var puntos = params.has('puntos') ? params.get('puntos') : "0";
                   var telefono = params.has('telefono') ? params.get('telefono') : "==Cliente==";
                   var codigo_pais = params.has('codigo_pais') ? params.get('codigo_pais') : "+";
                   var fecha = params.has('fecha') ? params.get('fecha') : "dd/mm/aaaa hh:mm:ss";
@@ -389,8 +389,8 @@
                 <b id="fecha"></b>
                   <br>
                 <b>CLIENTE:<br>
-                  <h1 class="nombre-cliente" id="nombre_client">
-                </h1>
+                  <h1 class="nombre-cliente" id="nombre_client"></h1>
+                  <b>PUNTOS:</b> <span id="puntos">22</span>        
           </div>
 
           <div class="label">
@@ -564,6 +564,7 @@
                           var nroBoletaElement = document.getElementById("nro_boleta_id").textContent = nro_boleta;
                           var fechaElement = document.getElementById("fecha").textContent = fecha;
                           var nombre_clientElement = document.getElementById("nombre_client").textContent = nombre_cliente;
+                          var puntosElement = document.getElementById("puntos").textContent = puntos;
                           var fecha_entregaElement = document.getElementById("fecha_entrega").textContent = fecha_entrega;
                           var totalElement = document.getElementById("total");totalElement.textContent = parseFloat(total).toFixed(2);
                           var descuentoElement = document.getElementById("descuento");descuentoElement.textContent = parseFloat(descuento).toFixed(2);
