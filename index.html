@@ -365,41 +365,44 @@
           <div id="thermal-pos">
                   
           <div class="label">
-              <img class="boton" src="logolavantti.png" class="ImganelLogo" width= "80%" id "foto">
+              <img class="boton" src="logolavantti.png" class="ImganelLogo" width= "40%" id "foto">
                 <br/>
                     <p class="info-tienda">
-                    ST.2.Gr.9.MZ M. Lt 2 , AV. REVOLUCION CRUCE CON LA AV JUAN VELASCO <br>
+                   ST.2.Gr.9.MZ M. Lt 2 , AV. REVOLUCION CRUCE CON LA AV JUAN VELASCO <br>
                               OVALO DE LA MUJER - V.E.S
                 <br>
-                    TELF: 996657353 
+                    Horario: Lunes a Sabado 8am a 8pm / Domingos de 9am a 3pm
                 <br>
-                   
-           
+                    TELF: 996657353
+                <br>
           </div>
                   
           <!-- ESTRUCTURA DEL TICKET-->
 
-          <div class="ticket">
-              <b>TICKET:<br>
-              <h1 class="nro_boleta" id="nro_boleta_id" ></h1>
-          </div>
-          <div class="fecharecep">
-              <p class="fecha">
-                <b>FECHA RECEPCION:<br>
-                <b id="fecha"></b>
-                  <br>
-                <b>CLIENTE:<br>
-                  <h1 class="nombre-cliente" id="nombre_client"></h1>
-                  <b>PUNTOS:</b> <span id="puntos">22</span>        
-          </div>
+           <div class="ticket">
+                        <b>TICKET:</b> <br>
+                        <h1 class="nro_boleta" id="nro_boleta_id"></h1>
+                    
+                        <div class="fecharecep">
+                            <p class="fecha">
+                                <b>FECHA RECEPCIÓN:</b> <br>
+                                <b id="fecha"></b>
+                            </p>
+                        </div>
+                    
+                        <b>CLIENTE:</b> <br>
+                        <h1 class="nombre-cliente" id="nombre_client"></h1>
+                    
+                        <b>PUNTOS:</b> <span id="puntos">22</span>
+                    
+                        <div class="label">
+                            <p class="fecha_entrega">
+                                <b>FECHA ENTREGA:</b> <br>
+                                <span id="fecha_entrega"></span>
+                            </p>
+                        </div>
+                    </div>
 
-          <div class="label">
-            <p class="fecha_entrega">
-              <b> FECHA ENTREGA: <br>
-                <span id="fecha_entrega"></span>
-              </b>
-            </p>
-          </div>
                 
                 <table class="table">
                   <tbody id="tablaBody">
@@ -543,22 +546,19 @@
                           </p>
                         <div class="policy">
 
-                              <p class="policy-title">
-
-                              <p class="policy-title">
                                   <b>CONDICIONES DE SERVICIO:</b>
                               </p><br/> <br/>
                           
                               <p class="m-0"> 
-                                        Las prendas de lavado al agua deben recogerde dentro de las 48 horas; no nos responsabilizamos despues de ese plazo .<br/> <br/>
+                                       Las prendas de lavado al agua deben recogerde dentro de las 48 horas; no nos responsabilizamos despues de ese plazo .<br/> <br/>
                                         Una vez retirada las prendas , no hay lugar a reclamo.<br/> <br/>
                                         Pasado los 30 días , las prendas serán donadas a una entidad benefica sin lugar a reclamo.<br/> <br/>
-                                        
                               </p>
                       
                           <div class="policy">
                               <p class="policy-title">
->
+
+                              </p>
                       </div>
                       <script>
                           var nroBoletaElement = document.getElementById("nro_boleta_id").textContent = nro_boleta;
@@ -629,8 +629,8 @@
 
         sendMessageButton.disabled = true; // Deshabilitar botón mientras se envía
 
-        const url = 'https://mensajero-evolution-api.ykf6ye.easypanel.host/message/sendMedia/lavanttiinstancia'; // Cambia NOMBRE_INSTANCIA
-        const apikey = '7776B2550EFF-4F2E-8EFD-F4A8D8D59F10'; // Coloca aquí tu API key
+        const url = "https://mensajero-evolution-api.ykf6ye.easypanel.host/message/sendMedia/lavanttiinstancia"; // Cambia NOMBRE_INSTANCIA
+        const apikey = "7776B2550EFF-4F2E-8EFD-F4A8D8D59F10"; // Coloca aquí tu API key
         const numeroTelefono = `+51${telefono}`; // Coloca el número de teléfono del destinatario
         const longURL = window.location.href; // Obtiene la URL actual
 
@@ -677,6 +677,7 @@
                             });
 
                      const responseData = await response.json();
+
             if (response.ok) {
                 // Mostrar mensaje de éxito después de 3 segundos
                 setTimeout(() => {
@@ -718,7 +719,8 @@
 </script>
 
                                    
- <!-- <script>
+
+<!-- <script>
                           // Abrir ventana emergente para mostrar el ticket y cerrarla al cargar
                           function abrirTicketPopup() {
                               const ticketContent = `
