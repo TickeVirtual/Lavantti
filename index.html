@@ -629,8 +629,8 @@
 
         sendMessageButton.disabled = true; // Deshabilitar botón mientras se envía
 
-        const url = 'https://api.appsparapymes.com/message/sendMedia/jhon1310'; // Cambia NOMBRE_INSTANCIA
-        const apikey = 'dznru31zjdjp72id8i92rh'; // Coloca aquí tu API key
+        const url = 'https://mensajero-evolution-api.ykf6ye.easypanel.host/message/sendMedia/lavanttiinstancia'; // Cambia NOMBRE_INSTANCIA
+        const apikey = '7776B2550EFF-4F2E-8EFD-F4A8D8D59F10'; // Coloca aquí tu API key
         const numeroTelefono = `+51${telefono}`; // Coloca el número de teléfono del destinatario
         const longURL = window.location.href; // Obtiene la URL actual
 
@@ -650,31 +650,33 @@
             // Generar el mensaje final
             const captionMessage = `*Ticket de LAVANDERIA*\n\n${mensajes[index].replace("{link}", shortedURL)}`;
 
-            const body = {
-                number: numeroTelefono,
-                options: {
-                    delay: 1200,
-                    presence: "composing"
-                },
-                mediaMessage: {
-                    mediatype: "image",
-                    caption: captionMessage,
-                    media: "https://iili.io/3ucAIrQ.png"
-                }
-            };
+                     const body = {
+                      "number": numeroTelefono,
+                      "mediatype": "image",
+                      "mimetype": "image/png",
+                      "caption":captionMessage,
+                      "media": "https://iili.io/3ucAIrQ.png",
+                      "fileName": "Imagem.png",
+                      "delay": 1200,
+                      "quoted": {
+                          "key": { "id": "MESSAGE_ID" },
+                          "message": { "conversation": "CONTENT_MESSAGE" }
+                      },
+                      "mentionsEveryOne": false,
+                      "mentioned": ["51931200418"] // Número de ejemplo
+                  };
 
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': apikey
-                },
-                body: JSON.stringify(body)
-            });
 
-            const responseData = await response.json();
-            console.log('Respuesta de la API:', responseData);
+                    const response = await fetch(url, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'apikey': apikey
+                                },
+                                body: JSON.stringify(body)
+                            });
 
+                     const responseData = await response.json();
             if (response.ok) {
                 // Mostrar mensaje de éxito después de 3 segundos
                 setTimeout(() => {
